@@ -1,21 +1,8 @@
 const timer = (deadline) => {
-  document.querySelectorAll(".count_1>span").forEach((item) => {
-    item.id = "timer-days";
-  });
-  document.querySelectorAll(".count_2>span").forEach((item) => {
-    item.id = "timer-hours";
-  });
-  document.querySelectorAll(".count_3>span").forEach((item) => {
-    item.id = "timer-minutes";
-  });
-  document.querySelectorAll(".count_4>span").forEach((item) => {
-    item.id = "timer-seconds";
-  });
-
-  const timerDays = document.querySelectorAll("#timer-days");
-  const timerHours = document.querySelectorAll("#timer-hours");
-  const timerMinutes = document.querySelectorAll("#timer-minutes");
-  const timerSeconds = document.querySelectorAll("#timer-seconds");
+  const timerDays = document.querySelectorAll(".count_1>span");
+  const timerHours = document.querySelectorAll(".count_2>span");
+  const timerMinutes = document.querySelectorAll(".count_3>span");
+  const timerSeconds = document.querySelectorAll(".count_4>span");
 
   timerDays.forEach((days) => {
     days.textContent = "00";
