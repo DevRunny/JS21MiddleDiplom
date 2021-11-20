@@ -15,8 +15,6 @@ const calc = () => {
 
     if (calcType.value && calcMaterial.value && calcInput.value) {
       calcTotalValue = calcInputValue * calcTypeValue * calcMaterialValue;
-    } else if (calcType[0] || calcMaterial[0]) {
-      calcTotalValue = 0;
     } else {
       calcTotalValue = 0;
     }
