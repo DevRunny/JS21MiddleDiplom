@@ -1,18 +1,34 @@
 const timer = (deadline) => {
-  document.querySelector(".count_1>span").id = "timer-days";
-  document.querySelector(".count_2>span").id = "timer-hours";
-  document.querySelector(".count_3>span").id = "timer-minutes";
-  document.querySelector(".count_4>span").id = "timer-seconds";
+  document.querySelectorAll(".count_1>span").forEach((item) => {
+    item.id = "timer-days";
+  });
+  document.querySelectorAll(".count_2>span").forEach((item) => {
+    item.id = "timer-hours";
+  });
+  document.querySelectorAll(".count_3>span").forEach((item) => {
+    item.id = "timer-minutes";
+  });
+  document.querySelectorAll(".count_4>span").forEach((item) => {
+    item.id = "timer-seconds";
+  });
 
-  const timerDays = document.getElementById("timer-days");
-  const timerHours = document.getElementById("timer-hours");
-  const timerMinutes = document.getElementById("timer-minutes");
-  const timerSeconds = document.getElementById("timer-seconds");
+  const timerDays = document.querySelectorAll("#timer-days");
+  const timerHours = document.querySelectorAll("#timer-hours");
+  const timerMinutes = document.querySelectorAll("#timer-minutes");
+  const timerSeconds = document.querySelectorAll("#timer-seconds");
 
-  timerDays.innerHTML = "00";
-  timerHours.innerHTML = "00";
-  timerMinutes.innerHTML = "00";
-  timerSeconds.innerHTML = "00";
+  timerDays.forEach((days) => {
+    days.textContent = "00";
+  });
+  timerHours.forEach((hours) => {
+    hours.textContent = "00";
+  });
+  timerMinutes.forEach((minutes) => {
+    minutes.textContent = "00";
+  });
+  timerSeconds.forEach((seconds) => {
+    seconds.textContent = "00";
+  });
 
   const getTimeRemaining = () => {
     let dateStop = new Date(deadline).getTime();
@@ -28,10 +44,18 @@ const timer = (deadline) => {
 
   const updateClock = () => {
     let getTime = getTimeRemaining();
-    timerDays.textContent = ("0" + getTime.days).slice(-2);
-    timerHours.textContent = ("0" + getTime.hours).slice(-2);
-    timerMinutes.textContent = ("0" + getTime.minutes).slice(-2);
-    timerSeconds.textContent = ("0" + getTime.seconds).slice(-2);
+    timerDays.forEach((days) => {
+      days.textContent = ("0" + getTime.days).slice(-2);
+    });
+    timerHours.forEach((hours) => {
+      hours.textContent = ("0" + getTime.hours).slice(-2);
+    });
+    timerMinutes.forEach((minutes) => {
+      minutes.textContent = ("0" + getTime.minutes).slice(-2);
+    });
+    timerSeconds.forEach((seconds) => {
+      seconds.textContent = ("0" + getTime.seconds).slice(-2);
+    });
   };
 
   setTimeout(() => {
