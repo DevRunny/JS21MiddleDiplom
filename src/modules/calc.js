@@ -19,7 +19,7 @@ const calc = () => {
       calcTotalValue = 0;
     }
 
-    calcTotal.placeholder = "Итого: " + calcTotalValue;
+    calcTotal.value = calcTotalValue;
   };
 
   setInterval(() => {
