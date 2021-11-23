@@ -6,7 +6,7 @@ const checkForms = () => {
   textForms.forEach((elem) => {
     const yourName = elem.querySelector("input[name=fio]");
     const yourPhone = elem.querySelector("input[name=phone]");
-    const inputButton = elem.querySelector("input[type=hidden]");
+    const inputButton = elem.querySelectorAll("input[type=hidden]");
 
     yourName.addEventListener("input", (e) => {
       e.preventDefault();
@@ -14,10 +14,14 @@ const checkForms = () => {
       e.target.value = e.target.value.replace(/[^а-яa-z ]/gi, "");
       if (e.target.value.length >= 2) {
         e.target.classList.add("success");
-        inputButton.classList.add("success");
+        inputButton.forEach((item) => {
+          item.classList.add("success");
+        });
       } else {
         e.target.classList.remove("success");
-        inputButton.classList.remove("success");
+        inputButton.forEach((item) => {
+          item.classList.remove("success");
+        });
       }
     });
 

@@ -23,11 +23,7 @@ const modals = () => {
         },
       });
     });
-  } catch (error) {
-    console.log(error.message);
-  }
 
-  try {
     serviceButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         serviceModal.style.display = "block";
@@ -43,11 +39,7 @@ const modals = () => {
         });
       });
     });
-  } catch (error) {
-    console.log(error.message);
-  }
 
-  try {
     modalContent.forEach((obj) => {
       obj.addEventListener("click", (e) => {
         if (e.target.classList.contains("header-modal__close")) {
