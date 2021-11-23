@@ -1,5 +1,6 @@
-const sendForm = ({ formName, someElem = [] }) => {
-  const form = document.querySelector(formName);
+const sendForm = ({ formId, someElem = [] }) => {
+  const form = document.getElementById(formId);
+  const button = form.querySelector("button");
   const statusBlock = document.createElement("div");
   const loadText = "Загрузка...";
   const errorText = "Ошибка...";
@@ -29,16 +30,17 @@ const sendForm = ({ formName, someElem = [] }) => {
 
   const submitForm = () => {
     const formElements = form.querySelectorAll("input");
-    const formData = new FormData(form);
     const formBody = {};
+
+    const nameInput = "Имя";
+    const phoneInput = "Телефон";
+
+    formBody[nameInput] = form.querySelector("input").value;
+    formBody[phoneInput] = form.querySelectorAll("input")[1].value;
 
     statusBlock.textContent = loadText;
     statusBlock.style.color = "black";
     form.append(statusBlock);
-
-    formData.forEach((val, key) => {
-      formBody[key] = val;
-    });
 
     if (window.location.toString().indexOf("balkony.html") > 0) {
       someElem.forEach((elem) => {
@@ -57,11 +59,12 @@ const sendForm = ({ formName, someElem = [] }) => {
         .then(() => {
           statusBlock.textContent = successText;
           statusBlock.style.color = "black";
-          document.querySelector("input").classList.remove("success");
-          // setTimeout(() => {
-          //   document.querySelector(".overlay").style.display = "none";
-          //   document.querySelector(".header-modal").style.display = "none";
-          // }, 5000);
+          form.querySelector("input").classList.remove("success");
+          setTimeout(() => {
+            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".header-modal").style.display = "none";
+            document.querySelector(".services-modal").style.display = "none";
+          }, 5000);
 
           formElements.forEach((input) => {
             input.value = "";
@@ -85,7 +88,7 @@ const sendForm = ({ formName, someElem = [] }) => {
       throw new Error("Форма была изменена или отсутствует!");
     }
 
-    form.addEventListener("submit", (e) => {
+    button.addEventListener("click", (e) => {
       e.preventDefault();
 
       if (statusBlock.style.display !== "none") {

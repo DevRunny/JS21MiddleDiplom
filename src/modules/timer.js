@@ -4,19 +4,6 @@ const timer = (deadline) => {
   const timerMinutes = document.querySelectorAll(".count_3>span");
   const timerSeconds = document.querySelectorAll(".count_4>span");
 
-  timerDays.forEach((days) => {
-    days.textContent = "00";
-  });
-  timerHours.forEach((hours) => {
-    hours.textContent = "00";
-  });
-  timerMinutes.forEach((minutes) => {
-    minutes.textContent = "00";
-  });
-  timerSeconds.forEach((seconds) => {
-    seconds.textContent = "00";
-  });
-
   const getTimeRemaining = () => {
     let dateStop = new Date(deadline).getTime();
     let dateNow = new Date().getTime();

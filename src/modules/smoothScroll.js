@@ -3,8 +3,6 @@ import { animate } from "./animate";
 const smoothScroll = () => {
   const btnToTop = document.querySelector(".smooth-scroll");
 
-  btnToTop.style.display = "none";
-
   const showBtn = () => (btnToTop.style.display = "block");
   const hideBtn = () => (btnToTop.style.display = "none");
 

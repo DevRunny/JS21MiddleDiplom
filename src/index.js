@@ -7,13 +7,14 @@ import sendForm from "./modules/sendForm";
 
 modals();
 smoothScroll();
-timer("24 november 2021");
+timer("26 november 2021");
 if (window.location.toString().indexOf("balkony.html") > 0) {
   calc();
 }
 checkForms();
+
 sendForm({
-  formName: "form[name=action-form]",
+  formId: "form1",
   someElem: [
     {
       type: "input",
@@ -23,7 +24,7 @@ sendForm({
 });
 
 sendForm({
-  formName: "form[name=action-form2]",
+  formId: "form2",
   someElem: [
     {
       type: "input",
@@ -33,7 +34,7 @@ sendForm({
 });
 
 sendForm({
-  formName: "form[name=callback-form]",
+  formId: "form3",
   someElem: [
     {
       type: "input",
@@ -43,7 +44,37 @@ sendForm({
 });
 
 sendForm({
-  formName: "form[name=application-form]",
+  formId: "form4",
+  someElem: [
+    {
+      type: "input",
+      id: "calc-total",
+    },
+  ],
+});
+
+sendForm({
+  formId: "form5",
+  someElem: [
+    {
+      type: "input",
+      id: "calc-total",
+    },
+  ],
+});
+
+sendForm({
+  formId: "form6",
+  someElem: [
+    {
+      type: "input",
+      id: "calc-total",
+    },
+  ],
+});
+
+sendForm({
+  formId: "form7",
   someElem: [
     {
       type: "input",
