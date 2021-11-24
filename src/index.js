@@ -4,6 +4,7 @@ import timer from "./modules/timer";
 import calc from "./modules/calc";
 import checkForms from "./modules/checkForms";
 import sendForm from "./modules/sendForm";
+import slider from "./modules/slider";
 
 modals();
 smoothScroll();
@@ -12,7 +13,20 @@ if (window.location.toString().indexOf("balkony.html") > 0) {
   calc();
 }
 checkForms();
-
+slider({
+  sliderBlockId: "benefits",
+  slidesClass: "benefits__item",
+  slideActiveClass: "benefits__item-active",
+  slideArrowLeft: "benefits__arrow--left",
+  slideArrowRight: "benefits__arrow--right",
+});
+slider({
+  sliderBlockId: "services",
+  slidesClass: "service-block",
+  slideActiveClass: "service-block-active",
+  slideArrowLeft: "services__arrow--left",
+  slideArrowRight: "services__arrow--right",
+});
 sendForm({
   formId: "form1",
   someElem: [
@@ -22,7 +36,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form2",
   someElem: [
@@ -32,7 +45,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form3",
   someElem: [
@@ -42,7 +54,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form4",
   someElem: [
@@ -52,7 +63,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form5",
   someElem: [
@@ -62,7 +72,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form6",
   someElem: [
@@ -72,7 +81,6 @@ sendForm({
     },
   ],
 });
-
 sendForm({
   formId: "form7",
   someElem: [

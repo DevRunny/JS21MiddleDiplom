@@ -536,11 +536,17 @@ input.error {
   background-color: #466a78;
 }
 .service-block {
+  display: none;
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   margin: 30px 20px 30px;
 }
+
+.service-block-active {
+  display: block;
+}
+
 .service-image img {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -1592,13 +1598,18 @@ input.error {
 
 .benefits-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
 }
 
 .benefits__item {
+  display: none;
   width: 100%;
   max-width: 185px;
+}
+
+.benefits__item-active {
+  display: block;
 }
 
 .benefits-arrows {
