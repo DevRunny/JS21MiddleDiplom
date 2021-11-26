@@ -39,6 +39,7 @@ h3 {
 .img-responsive {
   display: inline-block;
 }
+
 .phone-icon {
   background: url("../images/phone.png") no-repeat;
   display: inline-block;
@@ -794,9 +795,10 @@ p.services-image_mobile {
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0;
+  left: 0px;
   opacity: 0;
 }
+
 .document-inner:hover .document-overlay {
   opacity: 1;
   transition: opacity 0.3s linear;
@@ -1540,6 +1542,10 @@ input.error {
   display: none;
 }
 
+.sert-modal {
+  display: none;
+}
+
 .services-modal {
   display: none;
 }
@@ -1558,6 +1564,27 @@ input.error {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+
+.sert-modal--opened {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.sert-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 15%;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.sert-modal__close:hover {
+  color: rgba(0, 0, 0, 0.35);
 }
 
 .header-modal__close {

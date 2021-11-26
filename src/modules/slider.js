@@ -91,15 +91,17 @@ const slider = ({
       },
       draw(progress) {
         slides.forEach((item) => {
-          if (
-            e.target.closest(`.${slideArrowRight}`) ||
-            e.target.closest(`.${slideArrowLeft}`)
-          ) {
-            item.style.opacity = progress;
-            slides[0].style.right = 100 - 100 * progress + "%";
-            slides[1].style.left = 100 - 100 * progress + "%";
-            slides[2].style.right = 100 - 100 * progress + "%";
-            slides[3].style.left = 100 - 100 * progress + "%";
+          if (slides.length <= 4) {
+            if (
+              e.target.closest(`.${slideArrowRight}`) ||
+              e.target.closest(`.${slideArrowLeft}`)
+            ) {
+              item.style.opacity = progress;
+              slides[0].style.right = 100 - 100 * progress + "%";
+              slides[1].style.left = 100 - 100 * progress + "%";
+              slides[2].style.right = 100 - 100 * progress + "%";
+              slides[3].style.left = 100 - 100 * progress + "%";
+            }
           }
         });
       },

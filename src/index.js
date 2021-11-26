@@ -8,7 +8,7 @@ import slider from "./modules/slider";
 
 modals();
 smoothScroll();
-timer("26 november 2021");
+timer("27 november 2021");
 if (window.location.toString().indexOf("balkony.html") > 0) {
   calc();
 }

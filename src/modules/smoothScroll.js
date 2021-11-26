@@ -3,31 +3,39 @@ import { animate } from "./animate";
 const smoothScroll = () => {
   const btnToTop = document.querySelector(".smooth-scroll");
 
-  const showBtn = () => (btnToTop.style.display = "block");
-  const hideBtn = () => (btnToTop.style.display = "none");
-
-  document.addEventListener("scroll", () => {
-    if (window.scrollY < 200) {
-      hideBtn();
-      animate({
-        duration: 1000,
-        timing(timeFraction) {
-          return timeFraction;
-        },
-        draw(progress) {
-          btnToTop.style.opacity = progress;
-        },
-      });
-    } else {
-      showBtn();
+  try {
+    if (!btnToTop) {
+      throw new Error("Отсутствует кнопка возврата наверх!");
     }
-  });
 
-  btnToTop.addEventListener("click", (e) => {
-    e.preventDefault();
+    const showBtn = () => (btnToTop.style.display = "block");
+    const hideBtn = () => (btnToTop.style.display = "none");
 
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+    document.addEventListener("scroll", () => {
+      if (window.scrollY < 200) {
+        hideBtn();
+        animate({
+          duration: 1000,
+          timing(timeFraction) {
+            return timeFraction;
+          },
+          draw(progress) {
+            btnToTop.style.opacity = progress;
+          },
+        });
+      } else {
+        showBtn();
+      }
+    });
+
+    btnToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export default smoothScroll;
